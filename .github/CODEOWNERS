@@ -1,2 +1,8 @@
 *	@btuttle-fnba
+
+/file* @btuttle-fnba-testing-org/rootFiles
+/*/file* @btuttle-fnba-testing-org/subdirFiles
+
 /README.md @benjamin-tenjamin @lvanatta-fnba @aherard-fnba
+/protected @btuttle-fnba
+
