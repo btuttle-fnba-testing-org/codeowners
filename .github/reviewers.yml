@@ -22,7 +22,5 @@ options:
   ignored_keywords:
     - DO NOT REVIEW
   enable_group_assignment: false
-
-number_of_reviewers: 1
-
-last_files_match_only: true
+  number_of_reviewers: 1
+  last_files_match_only: true
