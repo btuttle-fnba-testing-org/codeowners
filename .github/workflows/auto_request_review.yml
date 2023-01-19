@@ -1,9 +1,10 @@
 name: Auto Request Review
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [opened, ready_for_review, reopened]
-    branches: [master]
+    branches: [main, master]
 
 jobs:
   auto-request-review:
