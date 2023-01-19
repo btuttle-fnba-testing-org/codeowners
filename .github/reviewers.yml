@@ -1,0 +1,28 @@
+reviewers:
+  defaults:
+    - teams:FullAccess
+    - admins
+
+groups:
+  admins:
+    - btuttle-fnba
+    - aherard-fnba
+  readme_editors:
+    - teams:readme_editors
+
+files:
+  '**':
+    - btuttle-fnba
+    - admins
+  'README.md':
+    - readme_editors
+
+options:
+  ignore_draft: true
+  ignored_keywords:
+    - DO NOT REVIEW
+  enable_group_assignment: false
+
+number_of_reviewers: 1
+
+last_files_match_only: true
