@@ -1,3 +1,4 @@
+
 on:
   workflow_dispatch:
   push:
@@ -7,14 +8,15 @@ on:
       - 'README.md'
 
 jobs:
-  pull-request:
+  auto-pull-request:
+    name: Create Pull Request
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: pull-request
-    uses: diillson/auto-pull-request@latest
-    with:
-      source_branch: ""
-      destination_branch: "main"
-      pr_title: "Merge [jinja temnplate here] changes."
-      github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+      - name: pull-request
+        uses: diillson/auto-pull-request@latest
+        with:
+          source_branch: ""
+          destination_branch: "main"
+          pr_title: "Merge [jinja temnplate here] changes."
+          github_token: ${{ secrets.GITHUB_TOKEN }}
