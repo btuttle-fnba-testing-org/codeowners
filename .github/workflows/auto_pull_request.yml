@@ -1,3 +1,4 @@
+name: Automatic PR creation/Review Request from codeowners
 
 on:
   workflow_dispatch:
@@ -20,3 +21,15 @@ jobs:
           destination_branch: "main"
           pr_title: "Merge [jinja temnplate here] changes."
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  auto-request-review:
+    name: Auto Request Review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Request review based on files changes and/or groups the author belongs to
+        uses: necojackarc/auto-request-review@v0.10.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config: ./.github/reviewers.yml # Config file location override
+          use_local: false
