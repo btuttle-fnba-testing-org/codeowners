@@ -6,3 +6,4 @@ newline
 hi
 hi
 hi
+test
