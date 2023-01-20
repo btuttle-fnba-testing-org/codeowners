@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - 'feature*'
+      - "feature*"
     paths:
-      - 'README.md'
+      - "README.md"
 
 jobs:
   auto-pull-request:
