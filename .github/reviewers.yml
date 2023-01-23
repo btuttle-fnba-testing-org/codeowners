@@ -1,27 +1,53 @@
+# List of reviewers for repository. team:{{ team_name }} represents a team in the organization's GitHub repo.
+# Other teams, like admins below, can be defined ad-hoc.
 reviewers:
   defaults:
     - team:FullAccess
     - admins
 
-groups:
-  admins:
-    - btuttle-fnba
-  readme_reviewers:
-    - turtle-fnba
-
-per_author:
-  readme_editors:
-    - readme_reviewers
-
-
+  # Ad-hoc groups used only in this workflow are defined here.
+  groups:
+    admins:
+      - btuttle-fnba
+  
+    readme_reviewers:
+      - turtle-fnba
+    
+    alecs_space:
+      - ajoiner-fnba
+    lukes_space:
+      - lvanatta-fnba
+    arnolds_space:
+      - aherard-fnba
+  
+# The workflow matches file -> reviewer associations from the bottom up, so it's important to have the most general/privileged permissions at the top.
 files:
-  '**':
+  # Will match all files in the repo.
+  # Don't be like me and use single quotes for globs and then wonder why shit isn't working
+  "**":
     - btuttle-fnba
     - admins
-  'README.md':
+
+  "protected/**":
+    - btuttle-fnba
+
+  # Have fun guyz, plz break
+  "alec/**":
+    - alecs_space
+    - team:ajoiner
+
+  "arnold/**":
+    - arnolds_space
+    - team:aherard
+
+  "luke/**":
+    - lukes_space
+    - team:lvanatta
+
+  "README.md":
     - team:readme_editors
     - readme_reviewers
-    
+
 options:
   ignore_draft: true
   enable_group_assignment: false
