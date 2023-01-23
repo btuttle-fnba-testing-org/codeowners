@@ -1,0 +1,35 @@
+name: Automatic PR creation/Review Request from codeowners
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "feature/**"
+    paths:
+      - "README.md"
+
+jobs:
+  auto-pull-request:
+    name: Create Pull Request
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: pull-request
+        uses: diillson/auto-pull-request@latest
+        with:
+          source_branch: ""
+          destination_branch: "master"
+          pr_title: "Merge [jinja temnplate here] changes."
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  auto-request-review:
+    name: Auto Request Review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Request review based on files changes and/or groups the author belongs to
+        uses: necojackarc/auto-request-review@latest
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config: .github/reviewers.yml
+          use_local: false
