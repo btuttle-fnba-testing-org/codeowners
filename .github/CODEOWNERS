@@ -1,8 +1,17 @@
 *	@btuttle-fnba
+/*/ @btuttle-fnba-testing-org/subdirFiles
 
-/file* @btuttle-fnba-testing-org/rootFiles
-/*/file* @btuttle-fnba-testing-org/subdirFiles
+/.github/ @btuttle-fnba-testing-org/admins
 
-/README.md @benjamin-tenjamin
-/protected @btuttle-fnba
+/docs/ @btuttle-fnba-testing-org/admins
+/CODEOWNERS @btuttle-fnba-testing-org/admins
+/protected/ @btuttle-fnba
 
+/* @btuttle-fnba-testing-org/rootFiles
+
+/alec/ @ajoiner-fnba
+/arnold/ @aherard-fnba
+/ben/ @btuttle-fnba
+/luke/ @lvanatta-fnba
+
+/README.md @btuttle-fnba-testing-org/readme_editors
